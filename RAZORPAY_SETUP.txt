@@ -1,0 +1,16 @@
+KHAATU FOODS - RAZORPAY SETUP
+
+1) Open the root .env file.
+2) Add your Razorpay Test Mode credentials:
+   RAZORPAY_KEY_ID=rzp_test_xxxxxxxxx
+   RAZORPAY_KEY_SECRET=xxxxxxxxxxxxxxxx
+3) Run database/migration.sql in the Khaatu Foods MySQL database.
+4) Make sure PHP cURL is enabled.
+5) Test checkout with Razorpay Test Mode.
+6) After testing, replace the two values with Live credentials.
+
+IMPORTANT:
+- Never put RAZORPAY_KEY_SECRET in JavaScript/HTML.
+- The payment amount is calculated on the server from the checkout snapshot.
+- The order becomes "confirmed" only after signature verification and backend amount/capture validation.
+- For Razorpay Orders API, enable automatic capture in your Razorpay Dashboard as recommended by Razorpay.

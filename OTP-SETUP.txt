@@ -1,0 +1,15 @@
+KHAATU FOODS - EMAIL OTP SETUP
+
+The registration flow now:
+1. User enters name, phone, email and password.
+2. A 6-digit OTP is sent to the email.
+3. User enters the OTP.
+4. Only after correct OTP verification is the user inserted into the users table.
+5. User is automatically logged in.
+6. If registration started from checkout, the user returns to checkout with the address already filled.
+
+IMPORTANT FOR XAMPP:
+PHP mail() is usually NOT configured on a fresh XAMPP/Windows installation.
+If OTP does not arrive, configure a mail transport/SMTP server for PHP or replace send_otp_email() in includes/config.php with PHPMailer/your SMTP provider.
+
+The OTP is stored only in the PHP session as a hash, expires after 10 minutes, and has a maximum of 5 verification attempts.

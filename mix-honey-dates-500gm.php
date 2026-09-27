@@ -1,0 +1,1 @@
+<?php require_once __DIR__.'/includes/config.php'; $s=$conn->prepare("SELECT id FROM products WHERE slug=? LIMIT 1");$slug='mix-honey-dates-500gm';$s->bind_param('s',$slug);$s->execute();$p=$s->get_result()->fetch_assoc(); if($p){$_GET['id']=$p['id']; include __DIR__.'/product.php';} else {http_response_code(404);echo 'Product not found';} ?>
